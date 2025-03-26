@@ -1,0 +1,169 @@
+.admin-dashboard {
+    margin-left: -3rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+  }
+  
+  .dashboard-title {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    font-size: 2.2rem;
+    border-left: 5px solid #3498db;
+    padding-left: 1rem;
+  }
+  
+  .statistics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    
+  }
+  
+  .statistics-grid > div {
+    width: 100%;
+    min-width: 1000px;
+  }
+  
+  .charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .chart-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .chart-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart-card h2 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 0.75rem;
+  }
+  
+  /* Shimmer effect */
+  .shimmer-card, .shimmer-chart {
+    background: #f6f7f8;
+    background-image: linear-gradient(
+      to right,
+      #f6f7f8 0%,
+      #edeef1 20%,
+      #f6f7f8 40%,
+      #f6f7f8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 800px 104px;
+    border-radius: 12px;
+    height: 160px;
+    position: relative;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    min-width: 220px;
+    width: 220px;
+  }
+  
+  .shimmer-chart {
+    height: 300px;
+    width: auto;
+    min-width: auto;
+  }
+  
+  .shimmer-chart.round {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .shimmer-title {
+    height: 24px;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .shimmer-value {
+    height: 40px;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  .shimmer-percentage {
+    height: 16px;
+    width: 30%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -400px 0;
+    }
+    100% {
+      background-position: 400px 0;
+    }
+  }
+  
+  /* Custom scrollbar for statistics row */
+  .statistics-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  .statistics-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  .statistics-grid::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+  }
+  
+  .statistics-grid::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .admin-dashboard {
+      padding: 1rem;
+    }
+    
+    .dashboard-title {
+      font-size: 1.8rem;
+    }
+    
+    .charts-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .shimmer-chart.round {
+      width: 250px;
+      height: 250px;
+    }
+  }

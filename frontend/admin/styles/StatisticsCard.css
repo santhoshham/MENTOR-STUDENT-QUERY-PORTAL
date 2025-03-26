@@ -1,0 +1,153 @@
+.statistics-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    height: 140px;
+    width: 220px;
+  }
+  
+  .statistics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statistics-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .statistics-card.neutral::before {
+    background: #3498db;
+  }
+  
+  .statistics-card.success::before {
+    background: #2ecc71;
+  }
+  
+  .statistics-card.warning::before {
+    background: #f39c12;
+  }
+  
+  .statistics-card.danger::before {
+    background: #e74c3c;
+  }
+  
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-right: 0.75rem;
+  }
+  
+  .card-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5;
+    color: #7f8c8d;
+  }
+  
+  .statistics-card.success .card-icon svg {
+    color: #2ecc71;
+  }
+  
+  .statistics-card.warning .card-icon svg {
+    color: #f39c12;
+  }
+  
+  .statistics-card.danger .card-icon svg {
+    color: #e74c3c;
+  }
+  
+  .card-content {
+    flex: 1;
+  }
+  
+  .card-title {
+    color: #7f8c8d;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  .card-count {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-count .counter {
+    display: inline-block;
+  }
+  
+  .card-percentage {
+    display: flex;
+    align-items: center;
+  }
+  
+  .percentage-bar {
+    height: 5px;
+    background: #ecf0f1;
+    border-radius: 3px;
+    width: 70%;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+  
+  .percentage-fill {
+    height: 100%;
+    border-radius: 3px;
+  }
+  
+  .statistics-card.neutral .percentage-fill {
+    background: #3498db;
+  }
+  
+  .statistics-card.success .percentage-fill {
+    background: #2ecc71;
+  }
+  
+  .statistics-card.warning .percentage-fill {
+    background: #f39c12;
+  }
+  
+  .statistics-card.danger .percentage-fill {
+    background: #e74c3c;
+  }
+  
+  .percentage-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #95a5a6;
+  }
+  
+  /* Hover effects */
+  .statistics-card:hover .card-icon {
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

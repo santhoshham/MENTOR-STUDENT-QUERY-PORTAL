@@ -1,0 +1,363 @@
+:root {
+  --primary: #3498db;
+  --primary-dark: #2980b9;
+  --secondary: #2ecc71;
+  --secondary-dark: #27ae60;
+  --danger: #e74c3c;
+  --danger-dark: #c0392b;
+  --text-primary: #2c3e50;
+  --text-secondary: #34495e;
+  --text-muted: #7f8c8d;
+  --bg-light: #f8f9fa;
+  --bg-card: #ffffff;
+  --border-light: #eaeaea;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+  --transition-normal: 0.3s ease;
+  --border-radius: 6px;
+}
+
+/* Main dashboard container */
+.dashboard {
+  padding: 30px 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin-top: 20px;
+}
+
+/* Clean, uppercase heading */
+.dashboard h2 {
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  font-weight: 600;
+
+}
+
+/* Vertical card layout (single column) */
+.queries-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+/* Clean, horizontal query card design */
+.query-card {
+  background: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  width: 150%;
+}
+
+.query-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Consistent row styling */
+.card-row {
+  padding: 12px 16px;
+  width: 100%;
+}
+
+/* Title row */
+.title-row {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.title-row h3 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Details row with description and resolved by */
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 16px;
+}
+
+.description, .resolved-by {
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+.description {
+  flex: 3;
+  margin-right: 16px;
+}
+
+.resolved-by {
+  flex: 1;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 14px;
+  margin-right: 8px;
+  min-width: 120px;
+}
+
+.content {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  min-width: 120px;
+  display: block;
+  text-align: left;
+
+}
+
+/* Solution row */
+.solution-row {
+  border-bottom: 1px solid var(--border-light);
+  padding: 14px 16px;
+}
+
+.solution {
+  display: flex;
+  align-items: flex-start;
+}
+
+.solution-content {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0;
+  flex: 1;
+}
+
+/* Feedback row */
+.feedback-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-light);
+  padding: 12px 16px;
+}
+
+/* Feedback badges */
+.feedback-badge {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.feedback-badge.satisfied {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.feedback-badge.not-satisfied {
+  background-color: var(--danger);
+  color: white;
+}
+
+.feedback-badge.pending {
+  background-color: #f39c12;
+  color: white;
+}
+
+/* Simplified feedback buttons */
+.feedback-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.feedback-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 13px;
+}
+
+.feedback-btn.satisfied {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.feedback-btn.satisfied:hover {
+  background-color: var(--secondary-dark);
+}
+
+.feedback-btn.not-satisfied {
+  background-color: var(--danger);
+  color: white;
+}
+
+.feedback-btn.not-satisfied:hover {
+  background-color: var(--danger-dark);
+}
+
+/* Clean pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  gap: 15px;
+}
+
+.pagination button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.pagination button:disabled {
+  background-color: #d1d8e0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.pagination span {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* Empty state styling */
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* Error message styling */
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: var(--danger);
+  font-size: 16px;
+}
+
+/* Shimmer loading effect for horizontal cards */
+.shimmer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shimmer-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shimmer-title {
+  height: 18px;
+  width: 70%;
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 800px 100px;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.shimmer-details {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.shimmer-description {
+  height: 14px;
+  width: 70%;
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 800px 100px;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.shimmer-resolved {
+  height: 14px;
+  width: 20%;
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 800px 100px;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.shimmer-solution {
+  height: 40px;
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 800px 100px;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.shimmer-feedback {
+  height: 30px;
+  width: 40%;
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 800px 100px;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+  align-self: flex-end;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+  }
+  
+  .details-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .description, .resolved-by {
+    width: 100%;
+  }
+  
+  .feedback-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .feedback-buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

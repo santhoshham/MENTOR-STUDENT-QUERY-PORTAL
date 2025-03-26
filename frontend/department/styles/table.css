@@ -1,0 +1,52 @@
+.query-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .query-table th, .query-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .query-table th {
+    background: #007bff;
+    color: white;
+  }
+  
+  .query-table tbody tr:hover {
+    background: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .query-table, .query-table tbody, .query-table tr, .query-table td, .query-table th {
+      display: block;
+      width: 100%;
+    }
+  
+    .query-table thead {
+      display: none;
+    }
+  
+    .query-table tr {
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+    }
+  
+    .query-table td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .query-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  

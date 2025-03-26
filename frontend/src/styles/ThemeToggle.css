@@ -1,0 +1,16 @@
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}

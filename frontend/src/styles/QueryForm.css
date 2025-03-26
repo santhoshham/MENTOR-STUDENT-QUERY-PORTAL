@@ -1,0 +1,292 @@
+/* Base styles with variables for easy theming */
+:root {
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --card-bg: #ffffff;
+  --bg-color: #f9fafb;
+  --text-color: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --input-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --success: #10b981;
+  --error: #ef4444;
+  --input-bg: #ffffff;  /* Added white background for inputs */
+}
+
+/* Dark mode can be implemented with a class or media query */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #3b82f6;
+    --primary-hover: #60a5fa;
+    --card-bg: #1f2937;
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: #374151;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    --input-bg: #ffffff;  /* Keep inputs white even in dark mode */
+  }
+}
+
+.student-query-form {
+  min-width: 600px;
+  max-width: 1000px;
+  margin: 4rem auto;
+  margin-left: 70px;
+  padding: 2.5rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-query-form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.15), 0 15px 15px -5px rgba(0, 0, 0, 0.07);
+}
+
+/* Form header with animated underline */
+.student-query-form h2 {
+  margin-bottom: 2.5rem;
+  color: var(--text-color);
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+  padding-bottom: 1.2rem;
+}
+
+.student-query-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.6s ease-in-out;
+}
+
+.student-query-form:hover h2::after {
+  width: 80px;
+}
+
+/* Status messages with animation */
+.student-query-error-message, .student-query-success-message {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  animation: slideDown 0.3s ease-out forwards;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.student-query-error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  border-left: 4px solid var(--error);
+}
+
+.student-query-success-message {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  border-left: 4px solid var(--success);
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Row layout styling - MODIFIED for row-by-row layout */
+.student-query-form-row {
+  display: flex;
+  flex-direction: column;  /* Changed from row to column */
+  margin-bottom: 2rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply staggered animations to form rows */
+.student-query-form-row:nth-child(1) { animation-delay: 0.1s; }
+.student-query-form-row:nth-child(2) { animation-delay: 0.2s; }
+.student-query-form-row:nth-child(3) { animation-delay: 0.3s; }
+.student-query-form-row:nth-child(4) { animation-delay: 0.4s; }
+
+.student-query-form-row label {
+  margin-bottom: 0.5rem;  /* Add space between label and input */
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.student-query-form-row:focus-within label {
+  color: var(--primary);
+}
+
+.student-query-required {
+  color: var(--error);
+}
+
+/* Input styling with focus effects - MODIFIED for white background */
+.student-query-form-row input[type="text"],
+.student-query-form-row textarea,
+.student-query-form-row select {
+  width: 100%;  /* Full width input boxes */
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--input-bg);  /* Use white background color */
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  box-shadow: var(--input-shadow);
+}
+
+.student-query-form-row input[type="text"]:focus,
+.student-query-form-row textarea:focus,
+.student-query-form-row select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.student-query-form-row textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Custom select styling */
+.student-query-form-row select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+  transition: background-position 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-query-form-row select:focus {
+  background-position: right 0.75rem center;
+}
+
+/* Submit button with loading state */
+.student-query-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.student-query-submit-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.student-query-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+}
+
+.student-query-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading button animation */
+.student-query-submit-btn:disabled::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  100% {
+    left: 100%;
+  }
+}
+
+/* Icon animation in the button */
+.student-query-submit-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.student-query-submit-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-query-form {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+    min-width: auto;
+  }
+  
+  .student-query-form h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-query-form {
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+  }
+  
+  .student-query-form-row label {
+    font-size: 0.875rem;
+  }
+  
+  .student-query-form-row input[type="text"],
+  .student-query-form-row textarea,
+  .student-query-form-row select {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+}

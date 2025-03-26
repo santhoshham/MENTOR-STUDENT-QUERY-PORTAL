@@ -1,0 +1,78 @@
+/* Base layout */
+.admin-layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  /* Header positioning */
+  header {
+    height: 5rem; /* 80px header height */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Main content area that contains sidebar and content */
+  .admin-main-content {
+    display: flex;
+    flex: 1;
+    margin-top: 5rem; /* 80px to match header height */
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 20rem; /* Fixed sidebar width */
+    height: calc(100vh - 5rem); /* Full height minus header */
+    position: fixed;
+    left: 0;
+    top: 5rem; /* Position below header */
+    background-color: #ffffff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    overflow-y: auto; /* Allow scrolling for long sidebar content */
+    z-index: 90;
+  }
+  
+  /* Main content area */
+  .admin-content-area {
+    flex: 1;
+    margin-left: 20rem; /* Match sidebar width */
+    padding: 2rem;
+    min-height: calc(100vh - 5rem); /* Full height minus header */
+    overflow-y: auto;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .sidebar {
+      width: 16rem;
+    }
+    
+    .admin-content-area {
+      margin-left: 16rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .admin-main-content {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      top: 0;
+    }
+    
+    .admin-content-area {
+      margin-left: 0;
+      padding: 1.5rem;
+    }
+  }

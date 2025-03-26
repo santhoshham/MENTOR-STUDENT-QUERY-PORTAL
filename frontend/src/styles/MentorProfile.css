@@ -1,0 +1,267 @@
+.mentor-profile {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  color: var(--text-color);
+}
+
+.profile-content {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.profile-header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mentor-avatar {
+  width: 8rem;
+  height: 8rem;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.mentor-header-info h1 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+}
+
+.mentor-title {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.mentor-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #f59e0b;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-btn,
+.schedule-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.chat-btn:hover {
+  background: #2563eb;
+}
+
+.schedule-btn {
+  background: var(--hover-color);
+  color: var(--text-color);
+}
+
+.schedule-btn:hover {
+  background: var(--border-color);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.profile-main section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-main section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.profile-main h2 {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expertise-tag {
+  background: var(--hover-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+}
+
+.education-list,
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education-item h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.education-item p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.certification-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--hover-color);
+  border-radius: 6px;
+}
+
+.cert-year {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.review-item {
+  padding: 1rem Continuing with the CSS styles from where we left off...
+
+  padding: 1rem;
+  background: var(--hover-color);
+  border-radius: 8px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.review-author {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.review-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #f59e0b;
+}
+
+.review-comment {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+}
+
+.review-date {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.info-card {
+  background: var(--hover-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.info-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--text-color);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item span:first-child {
+  color: var(--text-secondary);
+}
+
+.info-item span:last-child {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.availability {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.availability.available {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.availability.busy {
+  background: #fee2e2;
+  color: #dc2626;
+}
